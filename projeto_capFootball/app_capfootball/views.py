@@ -5,16 +5,16 @@ from datetime import date
 
 
 def home(request):
+    jogoDoDia=[]
     data_atual = date.today()
-    jogos = [
-        {'time': 'Barcelona x Real Madrid',
-            'dia': 'sexta-feira |', 'horario': 'às 12h00'},
-        {'time': 'Arsenal x Liverpool', 'dia': 'sexta-feira |', 'horario': 'às 15h00'},
-        {'time': 'Flamengo x Palmeiras', 'dia': 'sábado |', 'horario': 'às 8h00'},
-        {'time': 'PSG x Bayern', 'dia': 'sábado |', 'horario': 'às 20h00'},
-    ]
 
-    return render(request, 'home/home.html', {'data_atual': data_atual, 'jogos': jogos})
+    partidas = jogos.objects.all()
+    for partida in partidas:
+        if partida.data == data_atual:
+            jogoDoDia.append(partida)
+    
+    
+    return render(request, 'home/home.html', {'data_atual': data_atual , 'jogos': jogoDoDia})
 
 
 def emp(request):

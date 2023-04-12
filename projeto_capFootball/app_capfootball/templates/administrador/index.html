@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -10,19 +10,16 @@
 
 <body>
     <div class="container">
-
-
         <div class="text-center" style="margin-top: 10%;">
             <h1>Cadastrar Partidas</h1>
         </div>
-
         <div style="display: flex; justify-content: center; align-items: center;">
             <form method="POST" action="/emp" class="text-center">
                 {% csrf_token %}
 
                 <h6>Times da partida</h6>
                 <div>
-                  {{form.times }}
+                    {{form.times }}
                 </div>
 
 
@@ -47,16 +44,8 @@
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </div>
             </form>
-
         </div>
-        </form>
     </div>
-
-
-    </div>
-
-
-
 
     <style>
         body {
