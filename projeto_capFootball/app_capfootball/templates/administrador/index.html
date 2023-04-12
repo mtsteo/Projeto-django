@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Partidas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+
+        <div class="text-center" style="margin-top: 10%;">
+            <h1>Cadastrar Partidas</h1>
+        </div>
+
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <form method="POST" action="/emp" class="text-center">
+                {% csrf_token %}
+
+                <h6>Times da partida</h6>
+                <div>
+                  {{form.times }}
+                </div>
+
+
+                <h6>Dia da partida</h6>
+                <div>
+                    {{ form.dia }}
+                </div>
+
+
+                <h6>Hora da partida</h6>
+                <div>
+                    {{ form.horario }}
+                </div>
+
+
+                <h6>Data da partida</h6>
+                <div>
+                    {{ form.data}}
+                </div>
+
+                <div style="margin-top: 5%;">
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </div>
+            </form>
+
+        </div>
+        </form>
+    </div>
+
+
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: rgb(236, 170, 48);
+            margin: 0;
+        }
+    </style>
+</body>
+
+</html>

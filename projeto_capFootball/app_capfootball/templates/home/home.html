@@ -1,0 +1,93 @@
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">CapFootball</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Tabela</a>
+              </li>
+          
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+   <!--<div class="bloco-1">
+        <h1 class="app-name"><a>CapFootball</a></h1>
+    </div>-->
+
+    <h2 style="text-align:center;">Jogos da Semana</h2>
+    <h3 style="text-align:center;">{{ data_atual }}</h3>
+    <div class="bloco-2 d-flex justify-content-center">
+
+    </div>
+
+    {% block content %}
+    <title>Jogos da semana</title>
+        <div class="jogos-container">
+            
+            
+            <ul style="list-style:none; text-align:center;">
+                {% for jogo in jogos %}
+                    <li class="jogo">
+                        <span>{{ jogo.time }}</span>
+                        <br>
+                        <span>{{ jogo.dia }}</span>
+                        <span>{{ jogo.horario }}</span>
+                    </li>
+                    {% if not forloop.last %}
+                        <hr class="linha-horizontal">
+                    {% endif %}
+                {% empty %}
+                    <li>Não há jogos previstos para hoje.</li>
+                {% endfor %} 
+            </ul>
+        </div>
+ 
+    <style>
+        body{
+            background-color:rgb(236, 170, 48);
+            margin: 0;
+        }
+        .bloco-1 {
+            font-size: 16px;
+            background-color: white;
+            text-align: center;
+            height: 50px;
+            line-height: 50px; /* valor igual à altura definida */
+            
+        }
+        .app-name {
+            font-size: 35px;
+        }
+    
+        .jogo {
+            font-size: 20px;
+        }
+    
+    .jogos-container {
+        background-color: white;
+        border-radius: 10px;
+        margin: 20px auto; /* Centraliza o bloco na página */
+        margin-left: 100px; /* Define a largura do bloco */
+        margin-right: 100px;
+        padding: 20px;
+    }
+    </style>
+    
+</body>
+</html>
+
+{% endblock %},
